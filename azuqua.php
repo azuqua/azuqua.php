@@ -10,8 +10,8 @@ class Azuqua {
 	private $httpOptions = array(
 		"host" => "https://api.azuqua.com",
 		"headers" => array(
-			"Content-Type": "application/json",
-			"Accept": "*/*"
+			"Content-Type" => "application/json",
+			"Accept" =>"*/*"
 		)
 	);
 
