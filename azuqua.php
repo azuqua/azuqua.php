@@ -4,11 +4,11 @@ class Azuqua {
 
     private $routes = array(
         "invoke" => array(
-            "path" => "/api/flo/:id/invoke",
+            "path" => "/flo/:id/invoke",
             "method" => "post"
         ),
         "list" => array(
-            "path" => "/api/account/flos",
+            "path" => "/account/flos",
             "method" => "get"
         )
     );
