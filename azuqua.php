@@ -8,9 +8,26 @@ class Azuqua {
             "method" => "post"
         ),
         "list" => array(
-            "path" => "/account/flos",
+            "path" => "/org/flos",
             "method" => "get"
-        )
+        ),
+        "login" => array(
+            "path" => "/org/login",
+            "method" => "get"
+        ),
+        "enable" => array(
+            "path" => "/flo/:id/enable",
+            "method" => "get"
+        ),
+        "disable" => array(
+            "path" => "/flo/:id/disable",
+            "method" => "get"
+        ),
+        "read" => array(
+            "path" => "/flo/:id/enable",
+            "method" => "get"
+        ),
+
     );
     
     private $host = "https://api.azuqua.com";
@@ -99,5 +116,53 @@ class Azuqua {
         $path = str_replace(":id", $this->floCache[$floName], $this->routes["invoke"]["path"]);
         return $this->make_request($path, $this->routes["invoke"]["method"], $data);
     }
+
+    public function read($floName) {
+        $path = str_replace(":id", $this->floCache[$floName], $this->routes["read"]["path"]);
+        return $this->make_request($path, $this->routes["read"]["method"], "");
+    }
+
+    public function eanble($floName) {
+        $path = str_replace(":id", $this->floCache[$floName], $this->routes["enable"]["path"]);
+        return $this->make_request($path, $this->routes["enable"]["method"], "");
+    }
+
+    public function disable($floName) {
+        $path = str_replace(":id", $this->floCache[$floName], $this->routes["read"]["path"]);
+        return $this->make_request($path, $this->routes["read"]["method"], "");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
