@@ -28,7 +28,7 @@ class Azuqua {
     private function sign_data($secret, $data, $verb, $path, $timestamp) {
         $meta = join(":", array($verb, $path, $timestamp));
         if(is_array($data)){
-            $json = json_encode($data);
+            $json = json_encode($data, JSON_UNESCAPED_UNICODE);
         }
         return hash_hmac("sha256", $meta . $json, $secret);
     }
